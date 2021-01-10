@@ -201,10 +201,10 @@ dependencies {
         exclude group:'com.facebook.flipper'
     }
 
-    implementation "com.google.firebase:firebase-core:17.0.1"
-    implementation "com.google.firebase:firebase-messaging:19.0.0"
+    // implementation "com.google.firebase:firebase-core:17.0.1"
+    // implementation "com.google.firebase:firebase-messaging:19.0.0"
 
-    implementation 'com.google.android.gms:play-services-base:17.0.0'
+    // implementation 'com.google.android.gms:play-services-base:17.0.0'
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";

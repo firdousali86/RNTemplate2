@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "27650242949",
+    "project_id": "fir-c0c03",
+    "storage_bucket": "fir-c0c03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27650242949:android:1ef5ad2e53362ab1322cec",
+        "android_client_info": {
+          "package_name": "com.ideamath.chase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27650242949-kkjcf0la4rmltocprldgqou6uga44mn7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1b7RTofCw4T7trXR9Y9R5X5ZZNy1p9gg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27650242949-kkjcf0la4rmltocprldgqou6uga44mn7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "27650242949-pldfitsfn4tp15jv89md63ee39vku603.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ideamath.chase"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

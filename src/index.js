@@ -40,7 +40,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    if (Utils.isPlatformAndroid()) NativeModules.SplashScreen.hide();
+    // if (Utils.isPlatformAndroid()) NativeModules.SplashScreen.hide();
 
     NetworkInfo.networkInfoListener(
       this.state.store.dispatch,

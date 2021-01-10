@@ -17,6 +17,8 @@ import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 import io.invertase.firebase.fabric.crashlytics.RNFirebaseCrashlyticsPackage;
 
+import com.splashscreen.SplashScreenPackage;
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
@@ -36,6 +38,8 @@ public class MainApplication extends Application implements ReactApplication {
           packages.add(new RNFirebaseNotificationsPackage());
           packages.add(new RNFirebaseAnalyticsPackage());
           packages.add(new RNFirebaseCrashlyticsPackage());
+
+          packages.add(new SplashScreenPackage());
 
           return packages;
         }

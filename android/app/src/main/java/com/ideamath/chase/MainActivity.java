@@ -1,4 +1,4 @@
-package com.app;
+package com.ideamath.chase;
 
 import com.facebook.react.ReactActivity;
 

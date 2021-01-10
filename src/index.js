@@ -31,9 +31,9 @@ class App extends Component {
   state = {
     isLoading: true,
     store: configureStore(reducers, () => {
-      this.setState({isLoading: false}, () => {
-        DataHelper.setStore(this.state.store);
+      DataHelper.setStore(this.state.store);
 
+      this.setState({isLoading: false}, () => {
         this.loadingCompleted();
       });
     }),

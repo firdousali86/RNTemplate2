@@ -19,7 +19,7 @@ import AppNavigator from './navigator';
 import applyConfigSettings from './config';
 import NetworkInfo from './services/NetworkInfo';
 import {networkInfoListener} from './actions/NetworkInfoActions';
-import {DataHelper} from './helpers';
+import {DataHelper, NotificationHelper} from './helpers';
 
 import Utils from './util';
 
@@ -65,7 +65,7 @@ class App extends Component {
     }
 
     return (
-      <View style={styles.container}>
+      <View style={{flex: 1}}>
         <Provider store={this.state.store}>
           <AppNavigator />
         </Provider>
@@ -74,10 +74,13 @@ class App extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+function HeadlessCheck({isHeadless}) {
+  if (isHeadless) {
+    // App has been launched in the background by iOS, ignore
+    return null;
+  }
 
-AppRegistry.registerComponent(appName, () => App);
+  return <App />;
+}
+
+AppRegistry.registerComponent(appName, () => HeadlessCheck);

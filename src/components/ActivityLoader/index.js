@@ -5,7 +5,7 @@ import {View, ViewPropTypes} from 'react-native';
 import Spinner from 'react-native-spinkit';
 import {Metrics, Colors} from '../../theme';
 
-const LOADER_SIZE = 100;
+const LOADER_SIZE = Metrics.ratio(100);
 
 export default class ActivityLoader extends React.PureComponent {
   static propTypes = {
@@ -31,7 +31,7 @@ export default class ActivityLoader extends React.PureComponent {
         }}>
         <Spinner
           style={{
-            marginBottom: 50,
+            marginBottom: Metrics.ratio(50),
           }}
           isVisible={isLoading}
           size={LOADER_SIZE}

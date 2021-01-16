@@ -13,6 +13,7 @@ import {
   NativeModules,
 } from 'react-native';
 import {name as appName} from '../app.json';
+import * as Sentry from '@sentry/react-native';
 
 import configureStore from './store';
 import AppNavigator from './navigator';
@@ -26,6 +27,11 @@ import Utils from './util';
 const reducers = require('./reducers').default;
 
 applyConfigSettings();
+
+Sentry.init({
+  dsn:
+    'https://9a218b391f854589a495ad323df79ee3@o505982.ingest.sentry.io/5595215',
+});
 
 class App extends Component {
   state = {

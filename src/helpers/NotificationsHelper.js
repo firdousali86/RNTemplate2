@@ -99,6 +99,10 @@ class NotificationsHelper {
       this.dataAndMessageReceiveHandler(remoteMessage);
     });
 
+    messaging().setBackgroundMessageHandler(async (remoteMessage) => {
+      console.log('Message handled in the background!', remoteMessage);
+    });
+
     messaging().onNotificationOpenedApp((remoteMessage) => {
       console.log(
         'Notification caused app to open from background state:',

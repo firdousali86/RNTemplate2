@@ -14,6 +14,22 @@ import messaging from '@react-native-firebase/messaging';
 // };
 
 class NotificationsHelper {
+  getToken = () => {
+    messaging()
+      .getToken()
+      .then((token) => {
+        console.log(token);
+        // return saveTokenToDatabase(token);
+      });
+  };
+
+  refreshToken = () => {
+    messaging().onTokenRefresh((token) => {
+      console.log(token);
+      // saveTokenToDatabase(token);
+    });
+  };
+
   initializeFCM = () => {
     // this.firebase = RNFirebase.initializeApp(configurationOptions);
 

@@ -65,6 +65,9 @@ class App extends Component {
     // RedirectionHelper.redirectIfLoggedIn(data);
 
     NotificationHelper.appMount();
+
+    NotificationHelper.getToken();
+    NotificationHelper.refreshToken();
   };
 
   render() {

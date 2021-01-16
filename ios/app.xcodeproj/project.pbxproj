@@ -18,6 +18,7 @@
 		535C8F22C57B85435E16EBE1 /* libPods-app-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D0534E4FB55FBF32A81F2B /* libPods-app-tvOS.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		830A54982C83E0F948B5F6E4 /* libPods-app-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5ED727EBB636B2AF54353D7 /* libPods-app-tvOSTests.a */; };
+		8729B34725B345BD00E52997 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8729B34625B345BD00E52997 /* Dummy.swift */; };
 		87B4A2BF25AB1B5C008118A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87B4A2BE25AB1B5C008118A2 /* GoogleService-Info.plist */; };
 		D5720FF4FEA026A50D515B79 /* libPods-app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B69C5088747C272CD9CF74C /* libPods-app.a */; };
 		EFE6F1A41F7047FDF0F38443 /* libPods-app-appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 316D8D1B32D2FAE5CEC10338 /* libPods-app-appTests.a */; };
@@ -61,6 +62,8 @@
 		60B805A97EA9511AEF42C443 /* Pods-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.debug.xcconfig"; path = "Target Support Files/Pods-app/Pods-app.debug.xcconfig"; sourceTree = "<group>"; };
 		79B74A5778A721014D5B17A7 /* Pods-app-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app-tvOS.release.xcconfig"; path = "Target Support Files/Pods-app-tvOS/Pods-app-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = app/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8729B34525B345BC00E52997 /* app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Bridging-Header.h"; sourceTree = "<group>"; };
+		8729B34625B345BD00E52997 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		87B4A2BE25AB1B5C008118A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "app/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		87B4A2C025AB2F11008118A2 /* app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = app.entitlements; path = app/app.entitlements; sourceTree = "<group>"; };
 		9AC6F9D6618AF39181AE3763 /* Pods-app-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app-appTests.release.xcconfig"; path = "Target Support Files/Pods-app-appTests/Pods-app-appTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				8729B34625B345BD00E52997 /* Dummy.swift */,
+				8729B34525B345BC00E52997 /* app-Bridging-Header.h */,
 			);
 			name = app;
 			sourceTree = "<group>";
@@ -612,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				8729B34725B345BD00E52997 /* Dummy.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -653,6 +659,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 602425693E371F41BE0640E0 /* Pods-app-appTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -676,6 +683,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9AC6F9D6618AF39181AE3763 /* Pods-app-appTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = appTests/Info.plist;
@@ -710,6 +718,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ideamath.chase;
 				PRODUCT_NAME = app;
+				SWIFT_OBJC_BRIDGING_HEADER = "app-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -733,6 +742,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ideamath.chase;
 				PRODUCT_NAME = app;
+				SWIFT_OBJC_BRIDGING_HEADER = "app-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

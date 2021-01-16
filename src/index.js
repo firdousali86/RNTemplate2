@@ -57,6 +57,8 @@ class App extends Component {
 
   loadingCompleted = () => {
     // RedirectionHelper.redirectIfLoggedIn(data);
+
+    NotificationHelper.appMount();
   };
 
   render() {

@@ -98,6 +98,14 @@ class NotificationsHelper {
     this.messageListener = messaging().onMessage(async (remoteMessage) => {
       this.dataAndMessageReceiveHandler(remoteMessage);
     });
+
+    messaging().onNotificationOpenedApp((remoteMessage) => {
+      console.log(
+        'Notification caused app to open from background state:',
+        remoteMessage.notification,
+      );
+      // navigation.navigate(remoteMessage.data.type);
+    });
   };
 
   /*
@@ -159,20 +167,34 @@ class NotificationsHelper {
     //   });
   };
 
-  // getInitialNotification = () => {
-  //   RNFirebase.notifications()
-  //     .getInitialNotification()
-  //     .then((notificationOpen: NotificationOpen) => {
-  //       console.log('D');
-  //       if (notificationOpen) {
-  //         // App was opened by a notification
-  //         // Get the action triggered by the notification being opened
-  //         const action = notificationOpen.action;
-  //         // Get information about the notification that was opened
-  //         const notification: Notification = notificationOpen.notification;
-  //       }
-  //     });
-  // };
+  getInitialNotification = () => {
+    // Check whether an initial notification is available
+    messaging()
+      .getInitialNotification()
+      .then((remoteMessage) => {
+        if (remoteMessage) {
+          console.log(
+            'Notification caused app to open from quit state:',
+            remoteMessage.notification,
+          );
+          // setInitialRoute(remoteMessage.data.type); // e.g. "Settings"
+        }
+        // setLoading(false);
+      });
+
+    // RNFirebase.notifications()
+    //   .getInitialNotification()
+    //   .then((notificationOpen: NotificationOpen) => {
+    //     console.log('D');
+    //     if (notificationOpen) {
+    //       // App was opened by a notification
+    //       // Get the action triggered by the notification being opened
+    //       const action = notificationOpen.action;
+    //       // Get information about the notification that was opened
+    //       const notification: Notification = notificationOpen.notification;
+    //     }
+    //   });
+  };
 
   appMount = () => {
     // const channel = new RNFirebase.notifications.Android.Channel(
@@ -185,7 +207,7 @@ class NotificationsHelper {
 
     this.initializeFCM();
     this.checkFCMPermission();
-    // this.getInitialNotification();
+    this.getInitialNotification();
   };
 
   unMount = () => {

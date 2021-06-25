@@ -1168,6 +1168,11 @@
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
+"@react-native-firebase/auth@^12.1.0":
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-12.1.0.tgz#1897714d7650f49946611f932e3c6119482e49e9"
+  integrity sha512-9/peQaPYl5M2q4q/06Sih3z+BL9wOlmXgPex7jqbF99DN6IUigEq6eOt0sR3/g0ftS/IRDG7BfbIN5MtuY1vbg==
+
 "@react-native-firebase/messaging@^10.4.1":
   version "10.4.1"
   resolved "https://registry.yarnpkg.com/@react-native-firebase/messaging/-/messaging-10.4.1.tgz#9d48174a545b3b4b9372ed2230e7358ab3daf7b6"
@@ -6800,7 +6805,7 @@ redux-storage-decorator-filter@^1.1.8:
     lodash.set "^4.0.0"
     lodash.unset "^4.1.0"
 
-redux-storage-engine-reactnativeasyncstorage@^1.0.5:
+redux-storage-engine-reactnativeasyncstorage@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/redux-storage-engine-reactnativeasyncstorage/-/redux-storage-engine-reactnativeasyncstorage-1.0.7.tgz#a91ecd263a947c1bc705f7beca777c1a79c90328"
   integrity sha512-WSrxFakkx+FeVNfC8UNvYdWP9v5gNXcHz5YAuZbqz6pgWge4lVYQzOVk0tW6H6GoYqXmrUric89ZcQByi0MrrQ==

@@ -1,7 +1,7 @@
 // @flow
 import base64 from 'base-64';
-import { create } from 'apisauce';
-import { take, fork, select } from 'redux-saga/effects';
+import {create} from 'apisauce';
+import {take, fork, select} from 'redux-saga/effects';
 
 import {
   API_LOG,
@@ -9,15 +9,15 @@ import {
   ERROR_SOMETHING_WENT_WRONG,
   ERROR_NETWORK_NOT_AVAILABLE,
   ERROR_REQUEST_TIMEOUT,
-  ERROR_UNAUTHORIZED
+  ERROR_UNAUTHORIZED,
 } from '../config/WebService';
 import DataHelper from '../helpers/DataHelper';
 
-getUpdatedHeader = headers => {
+getUpdatedHeader = (headers) => {
   if (DataHelper.getAccessToken()) {
     return {
       ...headers,
-      'X-Access-Token': DataHelper.getAccessToken()
+      'X-Access-Token': DataHelper.getAccessToken(),
     };
   } else {
     return headers;
@@ -30,16 +30,17 @@ const api = create({
   baseURL: baseUrl,
   headers: {
     'Content-Type': 'application/json',
-    Accept: 'application/json'
+    Accept: 'application/json',
+    'Cache-Control': 'no-cache',
   },
-  timeout: API_TIMEOUT
+  timeout: API_TIMEOUT,
 });
 
 class ApiSauce {
   async post(url, data, headers) {
     const updatedHeader = getUpdatedHeader(headers);
 
-    const response = await api.post(url, data, { headers: updatedHeader });
+    const response = await api.post(url, data, {headers: updatedHeader});
 
     if (__DEV__ && API_LOG) {
       console.log(response);
@@ -52,7 +53,7 @@ class ApiSauce {
 
   async get(url, data, headers) {
     const updatedHeader = getUpdatedHeader(headers);
-    const response = await api.get(url, data, { headers: updatedHeader });
+    const response = await api.get(url, data, {headers: updatedHeader});
 
     if (__DEV__ && API_LOG) {
       console.log(response);
